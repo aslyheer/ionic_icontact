@@ -3,7 +3,19 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebaseConfig: {
+    apiKey: "AIzaSyCPb4SUJX-XBo_w2SDkn_EwGaPz0q1BEP0",
+    authDomain: "it-himalayan-contact.firebaseapp.com",
+    databaseURL: "https://it-himalayan-contact.firebaseio.com",
+    projectId: "it-himalayan-contact",
+    storageBucket: "it-himalayan-contact.appspot.com",
+    messagingSenderId: "17494166258",
+    appId: "1:17494166258:web:a6538993b89ebb374d9e6b",
+    measurementId: "G-L9XH05MEWC"
+  },
+  webClientId:
+    "744001363523-hs7so1403f0r7birhec6is84deg1ip12.apps.googleusercontent.com"
 };
 
 /*

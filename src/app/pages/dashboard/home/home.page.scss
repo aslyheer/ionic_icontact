@@ -1,0 +1,50 @@
+/* Main Body CSS Start*/
+.txt_swipe {
+  width: 100%;
+  position: fixed;
+  bottom: 27px;
+  text-align: center;
+  z-index: 1000;
+}
+mat-card {
+  width: 96%;
+  margin: auto;
+}
+.contact-header {
+  background-image: radial-gradient(
+    circle 981px at 9.5% 15.8%,
+    rgba(35, 111, 205, 1) 0%,
+    rgba(187, 187, 187, 1) 99.2%
+  );
+}
+.contact-body {
+  height: 80vh;
+  overflow-y: scroll;
+}
+/* Main Body CSS End*/
+
+/*Top Nav CSS Start*/
+ul li {
+  margin: 5px 0px;
+}
+.top-nav {
+  top: 0;
+  transition: all 2s linear;
+  background-color: rgba(35, 111, 205, 1);
+}
+.drpdn_nepal {
+  position: relative;
+}
+.drpdn_nepal::before {
+  content: url("/assets/flags/ne.svg");
+  display: inline-block;
+  width: 15px;
+  margin-right: 10px;
+}
+.drpdn_holl::before {
+  content: url("/assets/flags/nl.svg");
+  position: absolute;
+  left: 7px;
+  width: 15px;
+}
+/*Top Nav CSS Start*/

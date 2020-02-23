@@ -1,0 +1,53 @@
+<ion-content>
+  <ion-slides class="bg-brand hv-100 text-white">
+    <!-- First Slide Start -->
+    <ion-slide>
+      <div class="slide py-3">
+        <img src="/assets/logo.png" alt="" class="slide_brand_logo img-fluid" />
+        <br />
+        <br />
+        <br />
+        <h2>Welcome</h2>
+        <p>
+          The <b>conatct app</b> is a practical preview of the ionic framework
+          in action, and a demonstration of <br />
+          proper code use.
+        </p>
+        <br /><br /><br />
+        <ion-icon
+          name="arrow-forward-circle-outline"
+          style="font-size: 2em;"
+        ></ion-icon>
+        <p>Swipe Left</p>
+      </div>
+    </ion-slide>
+    <!-- First Slide End -->
+
+    <!-- Second Slide Start -->
+    <ion-slide class="flex-direction-column">
+      <main class="py-3">
+        <h4 class="text-center">Please Enter Your Company Code?</h4>
+        <form class="d-flex  mt-3 justify-content-center">
+          <div class="form-group d-block">
+            <input
+              type="email"
+              class="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              placeholder="Company Code"
+              [formControl]="companyCode"
+            />
+          </div>
+          <span (click)="goToHome()"
+            ><ion-icon
+              name="arrow-forward-circle-outline"
+              style="font-size: 2em;"
+              class="ml-3"
+            ></ion-icon
+          ></span>
+        </form>
+      </main>
+    </ion-slide>
+    <!-- Second Slide End -->
+  </ion-slides>
+</ion-content>

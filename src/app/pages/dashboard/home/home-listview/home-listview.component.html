@@ -1,0 +1,52 @@
+<!-- Search Container Start -->
+<div class="input-group position-absolute w-75 search-container m-auto">
+  <div class="position-relative w-100 search_input">
+    <input
+      type="text"
+      class="form-control w-100"
+      id="inlineFormInputGroupUsername2"
+      placeholder="Username"
+      [(ngModel)]="query"
+    />
+    <mat-icon class="position-absolute search_icon">search</mat-icon>
+  </div>
+</div>
+<!-- Search Container End -->
+
+<!-- List View Container Start -->
+<ng-container *ngFor="let employee of users | LockFilter: query">
+  <mat-card
+    class="d-flex align-items-center mt-3"
+    (click)="
+      _router.navigateByUrl('view-contact', {
+        state: employee
+      })
+    "
+  >
+    <figure class="mb-0 hp-6 rounded-circle wp-6 overflow-hidden">
+      <img
+        [src]="employee.imageUrl ? employee.imageUrl : '/assets/avatar.png'"
+        alt=""
+        class=""
+      />
+    </figure>
+    <div
+      class="d-flex flex-grow-1 ml-2 justify-content-between align-items-center"
+    >
+      <div>
+        <h6 class="text-capitalize">{{ employee.fullName }}</h6>
+        <span>{{ employee.mobilePhoneA }}</span>
+      </div>
+      <img
+        [src]="
+          employee.country == 'Nepal'
+            ? '/assets/flags/ne.svg'
+            : '/assets/flags/nl.svg'
+        "
+        class="rounded-circle  img-fluid"
+        style="height: 25px;"
+      />
+    </div>
+  </mat-card>
+</ng-container>
+<!-- List View Container End -->

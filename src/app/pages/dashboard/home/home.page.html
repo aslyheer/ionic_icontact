@@ -1,0 +1,46 @@
+<ion-content [fullscreen]="true">
+  <!-- Header Start -->
+  <header class=" contact-header p-2 position-relative">
+    <div class="d-flex justify-content-between text-white my-3">
+      <mat-icon (click)="validateUser()" class="cursor-pointer">loop</mat-icon>
+      <h4 class="font-weight-light">Contact</h4>
+      <mat-icon class="z-100 cursor-pointer" (click)="tggleTpNav=!tggleTpNav"
+        >view_headline</mat-icon
+      >
+    </div>
+    <p class="py-2"></p>
+  </header>
+  <!-- Header END -->
+
+  <!-- List View Container Start -->
+  <main class="contact-body pt-4 bg-white-grey">
+    <app-home-listview [users]="users"></app-home-listview>
+  </main>
+  <!-- List View Container End -->
+
+  <!-- Top Navigation Start -->
+  <nav
+    [ngClass]="tggleTpNav ?'d-block':'d-none'"
+    class="position-absolute top-nav w-100"
+  >
+    <ul class="list-unstyled ml-3 my-1 mt-3 pb-1 text-white">
+      <li class="">
+        <h5 class="">Choose The Country</h5>
+      </li>
+      <li class=" cursor-pointer" (click)="filterData('all')">
+        <strong>All</strong>
+      </li>
+      <hr class="bg-white my-2" />
+      <li class="drpdn_nepal mt-1 cursor-pointer" (click)="filterData('ne')">
+        Nepal
+      </li>
+      <li
+        class="drpdn_holl cursor-pointer ml-4 pl-1"
+        (click)="filterData('nl')"
+      >
+        Holland
+      </li>
+    </ul>
+  </nav>
+  <!-- Top Navigation End -->
+</ion-content>

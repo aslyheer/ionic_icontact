@@ -1,23 +1,37 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { RouteReuseStrategy } from '@angular/router';
-
-import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
-import { SplashScreen } from '@ionic-native/splash-screen/ngx';
-import { StatusBar } from '@ionic-native/status-bar/ngx';
-
-import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing.module';
-
+import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
+import { IonicModule } from "@ionic/angular";
+import { AppComponent } from "./app.component";
+import { AppRoutingModule } from "./app-routing.module";
+import { AngularFireModule } from "@angular/fire";
+import { environment } from "src/environments/environment";
+import { IonicPackageModule } from "./shared/shared-modules/ionic-package.module";
+import { FirebaseModule } from "./shared/shared-modules/firebase.module";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { AngularMaterialModule } from "./shared/shared-modules/angular-material.module";
+import { LoaderModule } from "./shared/components/loader/loader.module";
+import { CommonSharedModule } from "./shared/shared-modules/common-shared.module";
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
-  providers: [
-    StatusBar,
-    SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    IonicModule.forRoot(),
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+
+    /* shared modules */
+    AngularMaterialModule,
+    FirebaseModule,
+    CommonSharedModule.forRoot(),
+    IonicPackageModule.forRoot(),
+
+    /*Feature modules */
+    LoaderModule.forRoot()
   ],
+
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
